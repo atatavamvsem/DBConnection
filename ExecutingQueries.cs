@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace ConsoleDBConnection
 {
-    class Program
+    class ExecutingQueries
     {
         private static readonly ILog logger = Log4Net.GetInstance();
         static void Main(string[] args)
