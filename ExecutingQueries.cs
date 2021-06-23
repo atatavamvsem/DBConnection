@@ -16,7 +16,10 @@ namespace ConsoleDBConnection
             SqlManager.CreateConn();
 
             logger.Info("Result Sql query 'Min Worker Test Time'\n[PROJECT] [TEST] [MIN_WORK_TIME]");
-            ResultPrinter.Print(SqlManager.ExecuteQuery(Properties.SqlQuery.MinTimeTestWorkQuery));
+
+            List<Tests> listTests = SqlManager.ExecuteQueryMinTimeWork(Properties.SqlQuery.MinTimeTestWorkQuery);
+
+            ResultPrinter.PrintList(listTests);
 
             logger.Info("Result Sql query 'Count Unique Tests'\n[PROJECT] [TEST_COUNT]");
             ResultPrinter.Print(SqlManager.ExecuteQuery(Properties.SqlQuery.CountUniqueTests));

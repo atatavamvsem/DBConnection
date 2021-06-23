@@ -73,7 +73,7 @@ namespace ConsoleDBConnection.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT  p.name, t.name, Min(t.end_time-t.start_time) AS val FROM test t
+        ///   Looks up a localized string similar to SELECT  p.name as p, t.name as t, Min(t.end_time-t.start_time) AS val FROM test t
         ///                         right join project p on p.id = t.project_id 
         ///                         group by t.name 
         ///                         order by p.name, t.name;.

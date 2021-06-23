@@ -4,6 +4,7 @@ using System.Linq;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -21,6 +22,11 @@ namespace ConsoleDBConnection
         { 
             conn = new MySqlConnection(connStr);
             conn.Open();
+        }
+
+        internal static List<Tests> ExecuteQueryMinTimeWork(string minTimeTestWorkQuery)
+        {
+            return conn.Query<Tests>(minTimeTestWorkQuery).ToList();
         }
 
         public static MySqlDataReader ExecuteQuery(string query)
